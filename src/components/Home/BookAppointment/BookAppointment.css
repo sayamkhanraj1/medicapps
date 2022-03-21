@@ -25,7 +25,7 @@
 .appointment-btn{
          display: inline-block;
          text-transform: capitalize;
-         font-size: 14px;
+         font-size: 18px;
          font-weight: 500;
          padding: 15px 30px;
          background-color: #88c250;
@@ -33,6 +33,5 @@
          border: none;
          transition: 0.5s;
          border-radius: 5px;
-
          margin-right: 7px;
 }

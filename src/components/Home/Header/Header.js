@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Container, Nav, Navbar } from 'react-bootstrap';
-import logo from '../../../images/logo.png'
+import logo from '../../../images/logo.svg'
 import useAuth from '../../../hooks/useAuth';
 
 const Header = () => {

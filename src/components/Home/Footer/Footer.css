@@ -1,0 +1,15 @@
+.footer-menu {
+         list-style: none;
+         margin-top: 20px;
+         font-size: 16px;
+         cursor: pointer;
+}
+.footer-container {
+         background-color: #49b0c1;
+         padding: 30px;
+         color: white;
+         margin-top: 20px;
+ }     
+.footer-container h4{
+         color: white;
+ }     

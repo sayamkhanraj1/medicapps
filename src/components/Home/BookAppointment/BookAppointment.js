@@ -10,7 +10,7 @@ const BookAppointment = () => {
                                     <p className="appointment-titel2">Please feel welcome to contact our friendly reception staff with any general or medical enquiry. Our doctors will receive or return any urgent calls.</p>
                            </div>
                            </div>
-                           <div className="row">
+                           <div className="row mt-3">
                            <div className="col-lg-3 col-md-6 col-12 appointment-input">
                              <input type="text" name="name" placeholder="Your Name" /> 
                            </div>
