@@ -1,0 +1,38 @@
+.appointment-titel{
+         font-size: 35px;
+         font-weight: 700;
+         margin-bottom: 20px;
+}
+.appointment-titel2{
+         font-size: 14px;
+         line-height: 26px;
+         font-weight: 500;
+         color: rgb(145, 141, 141);
+}
+.appointment-input input{
+         width: 100%;
+         background: #fff;
+         border-radius: 5px;
+         border: none;
+         padding: 0 25px;
+         padding-right: 45px;
+         height: 55px;
+         font-size: 14px;
+         border: 1px solid #eee;
+         font-weight: 600;
+         color: #666;
+}
+.appointment-btn{
+         display: inline-block;
+         text-transform: capitalize;
+         font-size: 14px;
+         font-weight: 500;
+         padding: 15px 30px;
+         background-color: #88c250;
+         color: #fff;
+         border: none;
+         transition: 0.5s;
+         border-radius: 5px;
+
+         margin-right: 7px;
+}

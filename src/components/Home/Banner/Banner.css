@@ -1,0 +1,31 @@
+.banner{
+         background-color: #49b0c1;
+}
+.banner-btn{
+
+         text-transform: capitalize;
+         font-size: 20px;
+         font-weight: 500;
+         padding: 15px 30px;
+         background-color: #88c250;
+         color: #fff;
+         border: none;
+         border-radius: 5px;
+         margin-left: 10%;
+}
+.banner-heading{
+         color: #ddd;
+         font-size: 20px;
+         font-weight: 400;
+         display: block;
+         margin: 6px 10% 37px;
+         font-family: 'Quicksand', sans-serif;
+}
+.banner-heading1{
+         color: #fff;
+         font-size: 38px;
+         line-height: 55px;
+         font-weight: 700;
+         margin-bottom: 30px;
+         margin-left: 10%;
+}
