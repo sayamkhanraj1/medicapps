@@ -23,6 +23,7 @@ const Header = () => {
                         <Nav className="ms-auto">
                             <NavLink className="text-decoration-none text-dark fs-6 ms-4 fw-bold" to="/home">Home</NavLink>
                             <NavLink className="text-decoration-none text-dark fs-6 ms-4 fw-bold" to="/appointment">Appointment</NavLink>
+                            <NavLink className="text-decoration-none text-dark fs-6 ms-4 fw-bold" to="/priceing">Priceing</NavLink>
                             
                             {
                                 user.email && <NavLink className="text-decoration-none text-dark fs-6 ms-3 fw-bold" to="/dashbord">Dashbord</NavLink>

@@ -18,6 +18,7 @@ const Login = () => {
         const {singInIUseingGoogle} = useAuth();
         const auth = getAuth();
         
+
         const handleNameChange = e =>{
                 setName(e.target.value);
         }
@@ -52,7 +53,7 @@ const Login = () => {
         const logIn = (email, password) =>{
                 signInWithEmailAndPassword(auth, email, password)
                 .then(result =>{
-                        navigate.push('/home');
+                        navigate('/home');
                         setError('');
                 })
                 .catch(error =>{
@@ -63,7 +64,7 @@ const Login = () => {
         const createNewUser = (email, password) =>{
                 createUserWithEmailAndPassword(auth, email, password)
                 .then(result =>{
-                        navigate.push('/home');
+                        navigate('/home');
                         setError('');
                         const newUser = {email, displayName: name};
                         setUser(newUser);
@@ -100,7 +101,6 @@ const Login = () => {
                      body: JSON.stringify(user)
                  })
              }
-        
 
          return (
                   <div className="login-section p-5">

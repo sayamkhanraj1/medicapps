@@ -1,41 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './New.css';
 
 const News = () => {
-         const [news, setNews] = useState([]);
-         console.log(news);
-         useEffect(() => {
-                  fetch('https://vast-anchorage-14417.herokuapp.com/news')
-                  .then(res => res.json())
-                  .then(data => setNews(data))
-         }, []);
          return (
-                  <div className="container">
-                       {
-                                news.map(product=> <div
-                                    key={product._id}
-                                     >
-                                              <div className="row">
-                                
-                                    <div className="news-container d-flex justify-content-center align-items-center col-lg-6 col-12">
-                                     <div>
-                                     <div>
-                                             <img src={product?.img} alt="" />
-                                     </div>
-                                     <div>
-                                              <h2>{product?.title}</h2>
-                                              <p>{product?.description}</p>
-                                     </div>
-                                     </div>
-                                     <div>
-
-                                     </div>
-                                    </div>
-                      
-                       </div> 
-                                     </div>)
-                       }   
-                  </div>
+                 <div className="container my-5">
+                        <div className="col-lg-12 col-12">
+                        <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                        <div class="col-md-4">
+                        <img src="..." class="img-fluid rounded-start" alt="..."/>
+                        </div>
+                        <div class="col-md-8">
+                        <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                 </div>
          );
 };
 

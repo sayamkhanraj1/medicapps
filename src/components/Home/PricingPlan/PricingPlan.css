@@ -1,0 +1,46 @@
+.single-table{
+         margin-top: 30px;
+         background: #fff;
+         text-align: center;
+         position: relative;
+         overflow: hidden;
+         border-radius: 5px;
+         padding: 50px 40px;
+         border: 1px solid #eee;
+         border-top: 5px solid #88c250;
+}
+.titel{
+         font-size: 18px;
+         line-height: 26px;
+         color: #88c250;
+         font-weight: 500;
+         text-transform: capitalize;
+         margin-bottom: 20px;   
+}
+.duration{
+         color: #081828;
+         font-size: 13px;
+         font-weight: 400;
+         display: inline-block;
+         position: relative;
+         display: block;
+         margin-top: 5px;
+         top: -8px;
+}
+.table-list{
+         position: relative;
+         display: block;
+         margin-top: 20px;
+}
+.table-list1{
+         position: relative;
+         display: block;
+         font-size: 14px;
+         line-height: 26px;
+         font-weight: 400;
+         padding: 15px 0;
+         border-bottom: 1px solid #eee;
+         position: relative;
+         color: #081828;
+         list-style: none;
+}
