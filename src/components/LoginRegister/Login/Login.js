@@ -1,6 +1,6 @@
 import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, updateProfile } from '@firebase/auth';
 import React, { useState } from 'react';
-import { useNavigate, useLocation } from 'react-router';
+import { useNavigate } from 'react-router';
 import initializeAuthentication from '../../../firebase/firebase.init';
 import useAuth from '../../../hooks/useAuth';
 import './Login.css';
@@ -52,7 +52,7 @@ const Login = () => {
         const logIn = (email, password) =>{
                 signInWithEmailAndPassword(auth, email, password)
                 .then(result =>{
-                        navigate.push(redirect_uri);
+                        navigate.push('/home');
                         setError('');
                 })
                 .catch(error =>{
@@ -63,12 +63,12 @@ const Login = () => {
         const createNewUser = (email, password) =>{
                 createUserWithEmailAndPassword(auth, email, password)
                 .then(result =>{
-                        navigate.push(redirect_uri);
+                        navigate.push('/home');
                         setError('');
                         const newUser = {email, displayName: name};
                         setUser(newUser);
                         // save user to the database
-                        saveUser(email, name)
+                        saveUser(email, name, 'POST')
                         setUserName();
                 })
                 .catch((error) =>{
@@ -81,20 +81,18 @@ const Login = () => {
                 updateProfile(auth.currentUser, {displayName: name})
                 .then(result => {})
         }
-        const location = useLocation();
         const navigate = useNavigate();
-        const redirect_uri = location.state?.from || '/home';
         
         const handleGoogleLogIn = () =>{
                 singInIUseingGoogle()
                 .then(result =>{
-                        navigate.push(redirect_uri);
+                        navigate.push('/home');
                })
         }
        
         const saveUser = (email, displayName) =>{
                 const users = {email, displayName}
-                fetch('https://calm-mountain-67432.herokuapp.com/users', {
+                fetch('https://vast-anchorage-14417.herokuapp.com/users', {
                         method: 'POST',
                         headers: { "content-type": "application/json" },
                         body: JSON.stringify(users)
@@ -104,7 +102,7 @@ const Login = () => {
         
 
          return (
-                  <div className="login-section">
+                  <div className="login-section p-5">
                      <form onSubmit={handleRegistration}>
                      <div className="login-body d-flex justify-content-center align-items-center">
                         <div className=" login-form my-5">

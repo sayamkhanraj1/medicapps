@@ -1,0 +1,9 @@
+.news-container{
+         border: 1px solid #eee;
+         padding: 27px 25px;
+         border-left: none;
+         padding-left: 30px;
+         height: 100%;
+         border-radius: 0 5px 5px 0;
+         background-color: #fff;
+}

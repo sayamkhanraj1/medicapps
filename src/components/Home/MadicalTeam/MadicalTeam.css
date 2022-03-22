@@ -1,0 +1,35 @@
+.team-titel{
+         font-size: 35px;
+         margin-bottom: 20px;
+         line-height: 48px;
+         text-transform: capitalize;
+         font-weight: 700;
+         padding-bottom: 20px;
+         text-align: center;
+         font-family: 'Merriweather', serif;
+}
+.team-titel2{
+         font-size: 14px;
+         line-height: 26px;
+         color: rgb(104, 80, 80);
+         font-size: 16px;
+         font-weight: 600;
+}
+.name-container{
+         text-align: center;
+         background-color: #f9f9f9;
+         padding: 30px 20px;
+         border: 1px solid #eee;
+         border-top-color: transparent;
+}
+.doctor-titel{
+         font-weight: 400;
+         font-size: 17px;
+         display: block;
+         color: #88c250;
+}
+.doctor-name{
+         font-size: 20px;
+         font-weight: 600;
+         color: #49b0c1;
+}

@@ -22,7 +22,7 @@ const Header = () => {
                     <Navbar.Collapse id="basic-navbar-nav"  className="justify-content-end">
                         <Nav className="ms-auto">
                             <NavLink className="text-decoration-none text-dark fs-6 ms-4 fw-bold" to="/home">Home</NavLink>
-                            <NavLink className="text-decoration-none text-dark fs-6 ms-4 fw-bold" to="/moreProducts">More Products</NavLink>
+                            <NavLink className="text-decoration-none text-dark fs-6 ms-4 fw-bold" to="/appointment">Appointment</NavLink>
                             
                             {
                                 user.email && <NavLink className="text-decoration-none header-text fs-6 ms-3 fw-bold" to="/dashbord">Dashbord</NavLink>

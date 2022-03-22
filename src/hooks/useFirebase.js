@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, updateProfile, signOut } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import initializeAuthentication from '../firebase/firebase.init';
 
 initializeAuthentication();
@@ -26,42 +26,18 @@ const useFirebase = () => {
 
 
     //registration functionality 
-    const registerUser = (email, password, name, navigate, setMatch) => {
-        setIsLoading(true);
-        createUserWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                const newUser = { email: email, displayName: name };
-                setUser(newUser);
+    const singInIUseingGoogle = () =>{
+        setIsLoading(true)
+          const googleProvider = new GoogleAuthProvider();
+          return signInWithPopup(auth, googleProvider)
+          .then(result => {
+                 const user = result.user;
+                 saveUser(user.email, user.displayName, 'POST')
+          }).catch(error => {
 
-                //saving user to database after registration
-
-                  saveUser(email, name, 'POST')
-
-                //user name send to firebase
-                updateProfile(auth.currentUser, {
-                    displayName: name
-                }).then(() => {
-                    // Profile updated!
-                    // ...
-                }).catch((error) => {
-                    // An error occurred
-                    // ...
-                });
-
-                const destination = '/home'
-               navigate(destination);
-                setSuccess('User Regestration Succesfull!')
-                setAuthError('');
-                setPassError('');
-            })
-            .catch(() => {
-                setAuthError('Email Already In Use!');
-                setPassError('');
-                setSuccess('');
-                setMatch('');
-            })
-            .finally(() => setIsLoading(false));
-    }
+          })
+          .finally(() => setIsLoading(false));
+ };
 
     //login functionality
     const loginUser = (email, password, navigate) => {
@@ -113,7 +89,7 @@ const useFirebase = () => {
 
         const saveUser = (email, displayName, method) => {
         const user = { email, displayName };
-         fetch('https://murmuring-anchorage-32548.herokuapp.com/users', {
+         fetch('https://vast-anchorage-14417.herokuapp.com/users', {
              method: method,
              headers: {
                  'content-type': 'application/json'
@@ -125,7 +101,7 @@ const useFirebase = () => {
     // //assigning admin functionality
 
       useEffect(() => {
-        fetch(`https://murmuring-anchorage-32548.herokuapp.com/users/${user.email}`)
+        fetch(`https://vast-anchorage-14417.herokuapp.com/users/${user.email}`)
              .then(res => res.json())
             .then(data => setAdmin(data.admin))
      }, [user.email])
@@ -134,14 +110,14 @@ const useFirebase = () => {
     return {
         user,
         isLoading,
-        registerUser,
         loginUser,
         logOut,
         admin,
         success,
         setAuthError,
         authError,
-        passError
+        passError,
+        singInIUseingGoogle
 
 
     }

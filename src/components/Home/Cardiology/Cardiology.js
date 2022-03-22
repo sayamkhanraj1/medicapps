@@ -1,4 +1,5 @@
 import React from 'react';
+import './Cardiology.css'
 
 const Cardiology = () => {
          return (
