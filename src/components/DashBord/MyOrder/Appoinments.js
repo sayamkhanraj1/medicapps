@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
-import './MyOrder.css';
+import './Appoinments.css';
 
 
-const MyOrder = () => {
+const Appoinments = () => {
     const [myOrders, setMyOrders] = useState([]);
     const { user } = useAuth({});
 
@@ -85,4 +85,4 @@ const MyOrder = () => {
     );
 };
 
-export default MyOrder;
+export default Appoinments;

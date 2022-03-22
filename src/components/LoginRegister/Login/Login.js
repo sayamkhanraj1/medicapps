@@ -90,15 +90,16 @@ const Login = () => {
                })
         }
        
-        const saveUser = (email, displayName) =>{
-                const users = {email, displayName}
-                fetch('https://vast-anchorage-14417.herokuapp.com/users', {
-                        method: 'POST',
-                        headers: { "content-type": "application/json" },
-                        body: JSON.stringify(users)
-                })
-                .then()
-        }
+        const saveUser = (email, displayName, method) => {
+                const user = { email, displayName };
+                 fetch('https://vast-anchorage-14417.herokuapp.com/users', {
+                     method: method,
+                     headers: {
+                         'content-type': 'application/json'
+                     },
+                     body: JSON.stringify(user)
+                 })
+             }
         
 
          return (

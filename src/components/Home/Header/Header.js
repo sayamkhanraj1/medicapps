@@ -25,7 +25,7 @@ const Header = () => {
                             <NavLink className="text-decoration-none text-dark fs-6 ms-4 fw-bold" to="/appointment">Appointment</NavLink>
                             
                             {
-                                user.email && <NavLink className="text-decoration-none header-text fs-6 ms-3 fw-bold" to="/dashbord">Dashbord</NavLink>
+                                user.email && <NavLink className="text-decoration-none text-dark fs-6 ms-3 fw-bold" to="/dashbord">Dashbord</NavLink>
                             }
                             {
                                 user.email && <span className="fw-bold ms-4 me-1 header-text">{user.displayName}</span>
