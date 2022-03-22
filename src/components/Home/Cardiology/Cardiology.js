@@ -14,7 +14,7 @@ const Cardiology = () => {
                                              </div> 
                                              <div className="col-lg-6">
                                              <ul className="list">
-                                                      <i class="fa-solid fa-square-check"></i><li>Get the oars in the water and start rowing</li>
+                                                      <i class="fa-solid fa-user"></i><li>Get the oars in the water and start rowing</li>
                                                       <i class="fa-solid fa-square-check"></i><li>Introspection is the trick.</li>
                                                       <i class="fa-solid fa-square-check"></i><li>Most people believe that success is difficult.</li>
                                                       </ul>

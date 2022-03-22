@@ -17,7 +17,7 @@ const Login = () => {
 
         const {singInIUseingGoogle} = useAuth();
         const auth = getAuth();
-        
+        const navigate = useNavigate();
 
         const handleNameChange = e =>{
                 setName(e.target.value);
@@ -62,14 +62,13 @@ const Login = () => {
         }
 
         const createNewUser = (email, password) =>{
-                createUserWithEmailAndPassword(auth, email, password)
+                createUserWithEmailAndPassword(auth, email, password, navigate)
                 .then(result =>{
-                        navigate('/home');
                         setError('');
                         const newUser = {email, displayName: name};
                         setUser(newUser);
                         // save user to the database
-                        saveUser(email, name, 'POST')
+                        saveUser(email, name)
                         setUserName();
                 })
                 .catch((error) =>{
@@ -82,25 +81,23 @@ const Login = () => {
                 updateProfile(auth.currentUser, {displayName: name})
                 .then(result => {})
         }
-        const navigate = useNavigate();
         
         const handleGoogleLogIn = () =>{
-                singInIUseingGoogle()
+                singInIUseingGoogle(navigate)
                 .then(result =>{
-                        navigate.push('/home');
                })
         }
        
-        const saveUser = (email, displayName, method) => {
-                const user = { email, displayName };
-                 fetch('https://vast-anchorage-14417.herokuapp.com/users', {
-                     method: method,
-                     headers: {
-                         'content-type': 'application/json'
-                     },
-                     body: JSON.stringify(user)
-                 })
-             }
+        const saveUser = (email, displayName) =>{
+                const users = {email, displayName}
+                fetch('https://vast-anchorage-14417.herokuapp.com/users', {
+                        method: 'POST',
+                        headers: { "content-type": "application/json" },
+                        body: JSON.stringify(users)
+                })
+                .then()
+        }
+        
 
          return (
                   <div className="login-section p-5">

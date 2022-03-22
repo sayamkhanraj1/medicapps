@@ -3,7 +3,11 @@ import './PricingPlan.css'
 
 const PricingPlan = () => {
          return (
-                  <div className="container">
+                  <div className="container mt-4">
+                           <div>
+                                    <h2 className="team-titel">Pricing Plan</h2>
+                                    <p className="team-titel2 text-center">There are many variations of passages of Lorem Ipsum available, but <br /> the majority have suffered alteration in some form.</p>
+                           </div>
                          <div className="row">
                                   <div className="col-lg-4 col-12 col-md-6">
                                     <div className="single-table">
